@@ -1,5 +1,4 @@
 import 'package:bmi_app/screens/home_screen.dart';
-import 'package:bmi_app/screens/resulet_of_calculation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,13 +10,6 @@ class BmiApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: HomeScreen.homeScreenRoute,
-      routes: {
-        HomeScreen.homeScreenRoute: (context) => HomeScreen(),
-        ResuletOfCalculation.resuletOfCalculationRoute: (context) =>
-            ResuletOfCalculation(),
-      },
-    );
+    return MaterialApp(home: HomeScreen());
   }
 }

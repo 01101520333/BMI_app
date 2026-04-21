@@ -1,10 +1,11 @@
+import 'package:bmi_app/data/user_data.dart';
 import 'package:bmi_app/widgets/custom_app_bar_widget.dart';
 import 'package:flutter/material.dart';
 
-class ResuletOfCalculation extends StatelessWidget {
-  const ResuletOfCalculation({super.key});
+class ResuletOfCalculationScreen extends StatelessWidget {
+  const ResuletOfCalculationScreen({super.key, required this.userData});
   static const String resuletOfCalculationRoute = "ResuletOfCalculation";
-
+  final UserData userData;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

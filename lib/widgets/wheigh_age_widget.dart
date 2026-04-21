@@ -5,6 +5,8 @@ class WheighAgeWidget extends StatelessWidget {
     super.key,
     required this.wheighAgeText,
     required this.value,
+    required this.heroTag1,
+    required this.heroTag2,
     this.onPressedRemove,
     this.onPressedAdd,
   });
@@ -12,6 +14,8 @@ class WheighAgeWidget extends StatelessWidget {
   String value;
   void Function()? onPressedRemove;
   void Function()? onPressedAdd;
+  int heroTag1;
+  int heroTag2;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +54,7 @@ class WheighAgeWidget extends StatelessWidget {
                   onPressed: onPressedRemove,
                   backgroundColor: Color(0xff8B8C9E),
                   shape: CircleBorder(),
+                  heroTag: heroTag1,
                   child: Icon(Icons.remove, color: Color(0xffFFFFFF)),
                 ),
 
@@ -57,6 +62,7 @@ class WheighAgeWidget extends StatelessWidget {
                   onPressed: onPressedAdd,
                   backgroundColor: Color(0xff8B8C9E),
                   shape: CircleBorder(),
+                  heroTag: heroTag2,
                   child: Icon(Icons.add, color: Color(0xffFFFFFF)),
                 ),
               ],
