@@ -1,4 +1,5 @@
-import 'package:bmi_app/screens/resulet_of_calculation.dart';
+import 'package:bmi_app/data/user_data.dart';
+import 'package:bmi_app/screens/resulet_of_calculation_screen.dart';
 import 'package:bmi_app/widgets/custom_app_bar_widget.dart';
 import 'package:bmi_app/widgets/gender_witget.dart';
 import 'package:bmi_app/widgets/wheigh_age_widget.dart';
@@ -135,6 +136,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       widget.weight--;
                       setState(() {});
                     },
+                    heroTag1: 1,
+                    heroTag2: 2,
                   ),
                   WheighAgeWidget(
                     wheighAgeText: "Age",
@@ -147,6 +150,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       widget.age--;
                       setState(() {});
                     },
+                    heroTag1: 3,
+                    heroTag2: 4,
                   ),
                 ],
               ),
@@ -157,9 +162,18 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: MaterialButton(
         padding: EdgeInsets.symmetric(vertical: 30),
         onPressed: () {
-          Navigator.of(
-            context,
-          ).pushNamed(ResuletOfCalculation.resuletOfCalculationRoute);
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => ResuletOfCalculationScreen(
+                userData: UserData(
+                  gender: widget.gender,
+                  heitgh: widget.heitgh,
+                  weight: widget.weight,
+                  age: widget.age,
+                ),
+              ),
+            ),
+          );
         },
         color: Color(0xffE83D67),
         child: Text(
