@@ -5,9 +5,13 @@ class WheighAgeWidget extends StatelessWidget {
     super.key,
     required this.wheighAgeText,
     required this.value,
+    this.onPressedRemove,
+    this.onPressedAdd,
   });
   String wheighAgeText;
   String value;
+  void Function()? onPressedRemove;
+  void Function()? onPressedAdd;
 
   @override
   Widget build(BuildContext context) {
@@ -43,14 +47,14 @@ class WheighAgeWidget extends StatelessWidget {
               mainAxisAlignment: .spaceAround,
               children: [
                 FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: onPressedRemove,
                   backgroundColor: Color(0xff8B8C9E),
                   shape: CircleBorder(),
                   child: Icon(Icons.remove, color: Color(0xffFFFFFF)),
                 ),
 
                 FloatingActionButton(
-                  onPressed: () {},
+                  onPressed: onPressedAdd,
                   backgroundColor: Color(0xff8B8C9E),
                   shape: CircleBorder(),
                   child: Icon(Icons.add, color: Color(0xffFFFFFF)),
