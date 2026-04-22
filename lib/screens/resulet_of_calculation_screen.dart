@@ -36,16 +36,16 @@ class ResuletOfCalculationScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: 30),
                   Text(
-                    "Norma",
+                    userData.resultBmi,
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: .bold,
-                      color: Color(0xff21BF73),
+                      color: userData.categoryColor,
                     ),
                   ),
                   SizedBox(height: 26),
                   Text(
-                    "19",
+                    userData.calculateBmi.toString(),
                     style: TextStyle(
                       fontSize: 64,
                       fontWeight: .bold,
@@ -54,7 +54,7 @@ class ResuletOfCalculationScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 60),
                   Text(
-                    "You Have a Normal Body Weight,Good Job.",
+                    userData.healthAdvice,
                     textAlign: .center,
                     style: TextStyle(
                       fontSize: 16,
